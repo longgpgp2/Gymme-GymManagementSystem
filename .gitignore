@@ -1,0 +1,16 @@
+**/bin/*
+**/obj/*
+**/packages/*
+**/node_modules/*
+**/dist/*
+**/build/*
+**/logs/*
+**/tmp/*
+**/DS_Store
+**/.vscode/*
+**/.idea/*
+**/.env
+**/.env.local
+**/.env.development
+**/.env.production
+**/.env.test
