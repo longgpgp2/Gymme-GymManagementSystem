@@ -13,4 +13,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GMS.Core\GMS.Core.csproj" />
+    <ProjectReference Include="..\GMS.Data\GMS.Data.csproj" />
+    <ProjectReference Include="..\GMS.Models\GMS.Models.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -11,4 +11,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GMS.Core\GMS.Core.csproj" />
+  </ItemGroup>
+
 </Project>

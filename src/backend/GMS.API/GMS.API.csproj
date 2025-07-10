@@ -24,4 +24,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GMS.Business\GMS.Business.csproj" />
+    <ProjectReference Include="..\GMS.Core\GMS.Core.csproj" />
+    <ProjectReference Include="..\GMS.Data\GMS.Data.csproj" />
+    <ProjectReference Include="..\GMS.Models\GMS.Models.csproj" />
+  </ItemGroup>
+
 </Project>

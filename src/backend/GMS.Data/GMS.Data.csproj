@@ -13,4 +13,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GMS.Core\GMS.Core.csproj" />
+    <ProjectReference Include="..\GMS.Models\GMS.Models.csproj" />
+  </ItemGroup>
+
 </Project>
