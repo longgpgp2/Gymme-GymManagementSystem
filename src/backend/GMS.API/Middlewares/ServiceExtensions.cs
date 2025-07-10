@@ -64,7 +64,7 @@ public static class ServiceExtensions
     {
         services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new() { Title = "ViVuStore Web API", Version = "v1" });
+                options.SwaggerDoc("v1", new() { Title = "GMS Web API", Version = "v1" });
 
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
