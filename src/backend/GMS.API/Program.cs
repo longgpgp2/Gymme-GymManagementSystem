@@ -1,4 +1,4 @@
-using GMS.API.Middlewares;
+using GMS.Business.Middlewares;
 using GMS.Data;
 using Microsoft.EntityFrameworkCore;
 

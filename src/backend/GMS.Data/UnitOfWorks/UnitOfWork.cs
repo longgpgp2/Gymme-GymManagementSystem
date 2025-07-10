@@ -1,5 +1,6 @@
 using System;
 using GMS.Data.Repositories;
+using GMS.Models.Security;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace GMS.Data.UnitOfWorks;
@@ -9,6 +10,11 @@ public class UnitOfWork : IDisposable, IUnitOfWork
     private readonly GMSDbContext _context;
 
     private readonly IUserIdentity _currentUser;
+
+     private IRepository<RefreshToken>? _refreshTokenRepository;
+
+    public IRepository<RefreshToken> RefreshTokenRepository => _refreshTokenRepository ??= new Repository<RefreshToken>(_context, _currentUser);
+
 
     private bool _disposed = false;
 

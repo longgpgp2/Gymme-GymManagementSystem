@@ -11,4 +11,6 @@ public class GMSDbContext : IdentityDbContext<User, Role, Guid>
     {
     }
 
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
+
 }

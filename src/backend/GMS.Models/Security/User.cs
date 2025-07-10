@@ -8,6 +8,8 @@ namespace GMS.Models.Security;
 
 public class User : IdentityUser<Guid>, IBaseEntity
 {
+    public string? FullName { get; set; }
+
     public DateTime CreatedAt { get; set; }
 
     [ForeignKey(nameof(CreatedBy))]
@@ -30,6 +32,8 @@ public class User : IdentityUser<Guid>, IBaseEntity
     public User? DeletedBy { get; set; }
 
     public bool IsDeleted { get; set; }
+
+    public bool IsActive { get; set; }
 
     [StringLength(50)]
     public string? Status { get; set; }

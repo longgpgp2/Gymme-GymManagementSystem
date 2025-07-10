@@ -1,13 +1,18 @@
 using System;
 using System.Text;
+using GMS.Business.ConfigurationOptions;
+using GMS.Business.Handlers.Auth;
+using GMS.Business.Services;
 using GMS.Data;
+using GMS.Data.Repositories;
+using GMS.Data.UnitOfWorks;
 using GMS.Models.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
-namespace GMS.API.Middlewares;
+namespace GMS.Business.Middlewares;
 
 
 public static class ServiceExtensions
@@ -56,7 +61,20 @@ public static class ServiceExtensions
 
     public static IServiceCollection RegisterServicesAndMediatR(this IServiceCollection services, IConfiguration configuration)
     {
-        
+        // Register Services and MediatR
+        // Register MediatR
+        services.AddMediatR(cfg =>
+            cfg.RegisterServicesFromAssembly(typeof(LoginCommand).Assembly));
+
+        // Register UnitOfWork
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        // Register IUserIdentity to get current user
+        services.AddScoped<IUserIdentity, UserIdentity>();
+        // Register Services
+        services.AddScoped<ITokenService, TokenService>();
+
+        services.AddScoped<ICustomMapper, CustomMapper>();
+
         return services;
     }
 
