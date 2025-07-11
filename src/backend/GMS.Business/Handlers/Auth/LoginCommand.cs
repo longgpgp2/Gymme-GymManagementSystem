@@ -1,9 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using GMS.Business.ViewModels.Auth;
+using GMS.Models.ViewModels.Auth;
 using MediatR;
 
-namespace GMS.Business.Handlers.Auth;
+namespace GMS.Models.Handlers.Auth;
 
 public class LoginCommand : IRequest<LoginResponse>
 {

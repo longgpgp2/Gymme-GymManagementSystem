@@ -1,4 +1,4 @@
-using GMS.Core.Constants;
+using GMS.Models.Constants;
 using GMS.Models.Base;
 
 namespace GMS.Data.Repositories;

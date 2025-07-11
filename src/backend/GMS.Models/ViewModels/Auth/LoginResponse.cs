@@ -1,4 +1,4 @@
-namespace GMS.Business.ViewModels.Auth;
+namespace GMS.Models.ViewModels.Auth;
 
 public class LoginResponse
 {

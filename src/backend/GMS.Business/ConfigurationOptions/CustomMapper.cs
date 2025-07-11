@@ -1,7 +1,7 @@
 using System;
 using AutoMapper;
 
-namespace GMS.Business.ConfigurationOptions;
+namespace GMS.Models.ConfigurationOptions;
 
 
 public class CustomMapper: ICustomMapper

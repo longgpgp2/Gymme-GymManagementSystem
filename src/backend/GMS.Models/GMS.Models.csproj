@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GMS.Core\GMS.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace GMS.Business.Services;
+namespace GMS.Models.Services;
 
 public class TokenService : ITokenService
 {

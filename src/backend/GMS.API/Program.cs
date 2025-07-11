@@ -1,5 +1,9 @@
-using GMS.Business.Middlewares;
+using GMS.Models.Middlewares;
+using GMS.Models.Helpers;
 using GMS.Data;
+using GMS.Data.SeedData;
+using GMS.Models.Security;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +31,24 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    using var scope = app.Services.CreateScope();
+    var context = scope.ServiceProvider.GetRequiredService<GMSDbContext>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
+
+    var rolesJsonPath = Path.Combine(app.Environment.WebRootPath, "data", "role.json");
+    var usersJsonPath = Path.Combine(app.Environment.WebRootPath, "data", "user.json");
+
+    try
+    {
+        await DbInitializer.Initialize(context, roleManager, userManager, rolesJsonPath, usersJsonPath);
+        Console.WriteLine("Database seeded successfully.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error seeding database: {ex.Message}");
+    }
+
     app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI(options =>
@@ -39,7 +61,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+app.UseCors("CorsPolicy");
 
 app.Run();
 

@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using GMS.Models.Enums;
 using GMS.Models.Base;
 using Microsoft.AspNetCore.Identity;
 
@@ -8,7 +9,42 @@ namespace GMS.Models.Security;
 
 public class User : IdentityUser<Guid>, IBaseEntity
 {
-    public string? FullName { get; set; }
+    [Required]
+    [StringLength(255)]
+    public required string FullName { get; set; }
+
+    public Gender Gender { get; set; } = Gender.OTHER;
+
+    [Required]
+    [StringLength(255)]
+    [EmailAddress]
+    public override required string Email { get; set; }
+
+    public DateTime? JoinDate { get; set; }
+
+    public DateTime? HireDate { get; set; }
+
+    [Column(TypeName = "decimal(18,2)")]
+    public decimal? Salary { get; set; }
+
+    [Column(TypeName = "decimal(18,2)")]
+    public decimal? TotalSales { get; set; }
+
+    [Column(TypeName = "decimal(18,2)")]
+    public decimal? Commission { get; set; }
+
+    [StringLength(255)]
+    public string? Certificate { get; set; }
+
+    public DateTime? PackageEndDate { get; set; }
+
+    [StringLength(50)]
+    public string? EmployeeCode { get; set; }
+
+    [ForeignKey(nameof(Manager))]
+    public Guid? ManagerId { get; set; }
+
+    public User? Manager { get; set; }
 
     public DateTime CreatedAt { get; set; }
 
@@ -38,30 +74,6 @@ public class User : IdentityUser<Guid>, IBaseEntity
     [StringLength(50)]
     public string? Status { get; set; }
 
-    public DateTime? JoinDate { get; set; }
 
-    public DateTime? HireDate { get; set; }
-
-    [Column(TypeName = "decimal(18,2)")]
-    public decimal? Salary { get; set; }
-
-    [Column(TypeName = "decimal(18,2)")]
-    public decimal? TotalSales { get; set; }
-
-    [Column(TypeName = "decimal(18,2)")]
-    public decimal? Commission { get; set; }
-
-    [StringLength(255)]
-    public string? Certificate { get; set; }
-
-    public DateTime? PackageEndDate { get; set; }
-
-    [StringLength(50)]
-    public string? EmployeeCode { get; set; }
-
-    [ForeignKey(nameof(Manager))]
-    public Guid? ManagerId { get; set; }
-
-    public User? Manager { get; set; }
 
 }

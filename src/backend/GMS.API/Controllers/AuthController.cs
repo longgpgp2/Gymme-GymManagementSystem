@@ -1,10 +1,10 @@
-using GMS.Business.Handlers.Auth;
+using GMS.Models.Handlers.Auth;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GMS.Business.Controllers;
+namespace GMS.Models.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
