@@ -14,3 +14,4 @@
 **/.env.development
 **/.env.production
 **/.env.test
+**/appsettings.Development.json
