@@ -1,7 +1,7 @@
 [
   {
     "Id": "14448318-7efc-4b97-9b46-0d6ea6ab2056",
-    "UserName": "admin_user",
+    "UserName": "admin",
     "FullName": "System Administrator",
     "NormalizedUserName": "SYSTEM ADMINISTRATOR",
     "Email": "system_admin@gym.com",
@@ -15,7 +15,7 @@
   },
   {
     "Id": "cff5628e-bed3-4f0f-8f1a-aef99c1001bc",
-    "UserName": "pt_user_1",
+    "UserName": "pt_1",
     "FullName": "Personal Trainer A",
     "NormalizedUserName": "PERSONAL TRAINER A",
     "Email": "trainer.a@gym.com",
@@ -29,7 +29,7 @@
   },
   {
     "Id": "afa3bef6-4aee-4eb9-b4c7-9b259dc997b4",
-    "UserName": "pt_user_2",
+    "UserName": "pt_2",
     "FullName": "Personal Trainer B",
     "NormalizedUserName": "PERSONAL TRAINER B",
     "Email": "trainer.b@gym.com",
@@ -43,7 +43,7 @@
   },
   {
     "Id": "e9c215a3-ebf3-46df-8337-b6945d4ae194",
-    "UserName": "manager_user",
+    "UserName": "manager",
     "FullName": "Gym Manager",
     "NormalizedUserName": "GYM MANAGER",
     "Email": "manager@gym.com",
