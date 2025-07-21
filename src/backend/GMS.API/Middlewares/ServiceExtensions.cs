@@ -1,8 +1,8 @@
 using System;
 using System.Text;
-using GMS.Models.ConfigurationOptions;
-using GMS.Models.Handlers.Auth;
-using GMS.Models.Services;
+using GMS.Business.ConfigurationOptions;
+using GMS.Business.Handlers.Auth;
+using GMS.Business.Services;
 using GMS.Data;
 using GMS.Data.Repositories;
 using GMS.Data.UnitOfWorks;
@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
-namespace GMS.Models.Middlewares;
+namespace GMS.Business.Middlewares;
 
 
 public static class ServiceExtensions

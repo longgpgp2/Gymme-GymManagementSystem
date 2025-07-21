@@ -1,8 +1,7 @@
-using AutoMapper;
-using GMS.Models.ConfigurationOptions;
+using GMS.Business.ConfigurationOptions;
 using GMS.Data.UnitOfWorks;
 
-namespace GMS.Models.Handlers.Base;
+namespace GMS.Business.Handlers.Base;
 
 public class BaseHandler(IUnitOfWork unitOfWork, ICustomMapper mapper)
 {

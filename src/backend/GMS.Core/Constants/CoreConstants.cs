@@ -1,6 +1,6 @@
 using System;
 
-namespace GMS.Models.Constants;
+namespace GMS.Core.Constants;
 
 
 public class CoreConstants

@@ -1,7 +1,6 @@
-using AutoMapper;
-using GMS.Models.ConfigurationOptions;
-using GMS.Models.Handlers.Base;
-using GMS.Models.Services;
+using GMS.Business.ConfigurationOptions;
+using GMS.Business.Handlers.Base;
+using GMS.Business.Services;
 using GMS.Models.ViewModels.Auth;
 using GMS.Data.UnitOfWorks;
 using GMS.Models.Security;
@@ -9,7 +8,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 
-namespace GMS.Models.Handlers.Auth;
+namespace GMS.Business.Handlers.Auth;
 
 public class LoginCommandHandler(
     IUnitOfWork unitOfWork,

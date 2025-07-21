@@ -1,5 +1,5 @@
 using System;
-using GMS.Models.Helpers;
+using GMS.Core.Helpers;
 using GMS.Models.Security;
 using Microsoft.AspNetCore.Identity;
 

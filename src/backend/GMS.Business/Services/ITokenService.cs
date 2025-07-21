@@ -1,7 +1,7 @@
 using System;
 using GMS.Models.Security;
 
-namespace GMS.Models.Services;
+namespace GMS.Business.Services;
 
 public interface ITokenService
 {

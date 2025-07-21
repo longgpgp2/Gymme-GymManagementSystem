@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using GMS.Models.ViewModels.Auth;
 using MediatR;
 
-namespace GMS.Models.Handlers.Auth;
+namespace GMS.Business.Handlers.Auth;
 
 public class LoginCommand : IRequest<LoginResponse>
 {

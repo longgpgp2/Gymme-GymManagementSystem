@@ -2,7 +2,7 @@ using System;
 using System.Text.Json;
 using GMS.Models.Security;
 using GMS.Models.ViewModels.UserViews;
-namespace GMS.Models.Helpers;
+namespace GMS.Core.Helpers;
 
 public class SeedDataHelper
 {

@@ -1,5 +1,4 @@
-using GMS.Models.Middlewares;
-using GMS.Models.Helpers;
+using GMS.Business.Middlewares;
 using GMS.Data;
 using GMS.Data.SeedData;
 using GMS.Models.Security;
