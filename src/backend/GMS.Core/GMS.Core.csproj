@@ -10,8 +10,4 @@
     <ProjectReference Include="..\GMS.Models\GMS.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
-
 </Project>

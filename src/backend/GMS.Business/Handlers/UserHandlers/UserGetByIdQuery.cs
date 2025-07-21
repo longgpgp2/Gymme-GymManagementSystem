@@ -1,5 +1,6 @@
 using System;
 using GMS.Business.ConfigurationOptions;
+using GMS.Core.Exceptions;
 using GMS.Data.UnitOfWorks;
 using GMS.Models.Security;
 using GMS.Models.ViewModels.UserViews;
@@ -26,7 +27,7 @@ public class UserGetByIdQueryHandler : BaseUserHandler, IRequestHandler<UserGetB
     public async Task<UserViewModel> Handle(UserGetByIdQuery request, CancellationToken cancellationToken)
     {
         var user = await _userManager.FindByIdAsync(request.Id.ToString()) ??
-                   throw new KeyNotFoundException($"User with ID {request.Id} not found.");
+                   throw new ResourceNotFoundException($"User with ID {request.Id} not found.");
 
         return (UserViewModel)_mapper.Map<UserViewModel>(user);
     }

@@ -1,3 +1,4 @@
+using GMS.API.Middlewares;
 using GMS.Business.Middlewares;
 using GMS.Data;
 using GMS.Data.SeedData;
@@ -64,6 +65,8 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.UseCustomExceptionHandler();
+
 app.UseCors("CorsPolicy");
 
 app.Run();
