@@ -5,13 +5,14 @@ using Microsoft.EntityFrameworkCore;
 using GMS.Models.ViewModels.UserViews;
 using GMS.Models.Security;
 using GMS.Business.ConfigurationOptions;
+using GMS.Data.Repositories;
 
 namespace GMS.Business.Handlers.UserHandlers;
 
 public class UserGetAllQueryHandler : BaseUserHandler, IRequestHandler<UserGetAllQuery, IEnumerable<UserViewModel>>
 {
-    public UserGetAllQueryHandler(IUnitOfWork unitOfWork, ICustomMapper mapper, UserManager<User> userManager, RoleManager<Role> roleManager)
-        : base(unitOfWork, mapper, userManager, roleManager)
+    public UserGetAllQueryHandler(IUnitOfWork unitOfWork, ICustomMapper mapper, UserManager<User> userManager, RoleManager<Role> roleManager, IUserIdentity currentUser)
+        : base(unitOfWork, mapper, userManager, roleManager, currentUser)
     {
     }
 

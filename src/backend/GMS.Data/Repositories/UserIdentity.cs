@@ -1,3 +1,4 @@
+using GMS.Core.Constants;
 using GMS.Models.Security;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -16,7 +17,7 @@ public class UserIdentity : IUserIdentity
         _httpContextAccessor = httpContextAccessor;
     }
 
-    public virtual Guid UserId => GetCurrentUserAsync().Result?.Id ?? Guid.Empty;
+    public virtual Guid UserId => GetCurrentUserAsync().Result?.Id ?? CoreConstants.AdminId;
 
     private async Task<User?> GetCurrentUserAsync()
     {

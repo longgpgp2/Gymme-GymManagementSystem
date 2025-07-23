@@ -3,18 +3,13 @@ using Microsoft.AspNetCore.Identity;
 using GMS.Models.Security;
 using GMS.Business.ConfigurationOptions;
 using GMS.Business.Handlers.Base;
+using GMS.Data.Repositories;
 
 namespace GMS.Business.Handlers.UserHandlers;
 
-public class BaseUserHandler : BaseHandler
+public class BaseUserHandler(IUnitOfWork unitOfWork, ICustomMapper mapper, UserManager<User> userManager, RoleManager<Role> roleManager, IUserIdentity currentUser) : BaseHandler(unitOfWork, mapper)
 {
-    protected readonly UserManager<User> _userManager;
-    protected readonly RoleManager<Role> _roleManager;
-
-    public BaseUserHandler(IUnitOfWork unitOfWork, ICustomMapper mapper, UserManager<User> userManager, RoleManager<Role> roleManager)
-        : base(unitOfWork, mapper)
-    {
-        _userManager = userManager;
-        _roleManager = roleManager;
-    }
+    protected readonly UserManager<User> _userManager = userManager;
+    protected readonly RoleManager<Role> _roleManager = roleManager;
+    protected readonly IUserIdentity _currentUser = currentUser;
 }

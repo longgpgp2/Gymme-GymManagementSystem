@@ -1,13 +1,14 @@
 using System;
-using GMS.Models.ViewModels.UserViews;
 using MediatR;
 
 namespace GMS.Business.Handlers.UserHandlers;
 
-public class UserGetByIdQuery : IRequest<UserViewModel>
+public class UserDeleteCommand : IRequest<bool>
 {
     public Guid Id { get; set; }
 
-
-
+    public UserDeleteCommand(Guid id)
+    {
+        Id = id;
+    }
 }

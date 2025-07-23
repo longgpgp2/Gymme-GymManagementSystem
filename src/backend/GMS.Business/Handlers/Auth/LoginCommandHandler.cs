@@ -35,7 +35,7 @@ public class LoginCommandHandler(
         }
 
         // Check if the user is active
-        if (!user.IsActive)
+        if (!user.IsActive || user.IsDeleted)
         {
             throw new UnauthorizedAccessException("Your account is deactivated. Please contact an administrator.");
         }

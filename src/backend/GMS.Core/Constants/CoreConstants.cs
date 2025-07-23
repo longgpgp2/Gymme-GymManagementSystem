@@ -6,7 +6,7 @@ namespace GMS.Core.Constants;
 public class CoreConstants
 {
 
-    public static Guid AdminId = Guid.Parse("f894a1cc-c3fa-47c4-aa63-16a9742816b8");
+    public static Guid AdminId = Guid.Parse("14448318-7efc-4b97-9b46-0d6ea6ab2056");
     public struct Schemas
     {
         public const string Common = "Common";

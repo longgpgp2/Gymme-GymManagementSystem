@@ -35,4 +35,25 @@ public class UserController : ControllerBase
         var result = await _mediator.Send(new UserGetByIdQuery { Id = id });
         return Ok(result);
     }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateUser([FromBody] UserCreateCommand command)
+    {
+        var result = await _mediator.Send(command);
+        return CreatedAtAction(nameof(GetUserById), new { id = result.Id }, result);
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> UpdateUser( [FromBody] UserUpdateCommand command)
+    {
+        var result = await _mediator.Send(command);
+        return Ok(result);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteUser(Guid id)
+    {
+        var result = await _mediator.Send(new UserDeleteCommand(id));
+        return Ok(result);
+    }
 }

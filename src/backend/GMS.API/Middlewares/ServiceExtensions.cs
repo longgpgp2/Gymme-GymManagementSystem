@@ -75,6 +75,8 @@ public static class ServiceExtensions
 
         services.AddScoped<ICustomMapper, CustomMapper>();
 
+        services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
         return services;
     }
 
